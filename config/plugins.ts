@@ -3,14 +3,16 @@ export default ({ env }) => ({
     config: {
       provider: 'aws-s3',
       providerOptions: {
-        credentials: {
-          accessKeyId: env('AWS_ACCESS_KEY_ID'),
-          secretAccessKey: env('AWS_ACCESS_SECRET'),
-        },
-        region: env('AWS_REGION', 'ca-central-1'),
-        params: {
-          ACL: env('AWS_ACL', 'public-read'),
-          Bucket: env('AWS_BUCKET'),
+        s3Options: {
+          credentials: {
+            accessKeyId: env('AWS_ACCESS_KEY_ID'),
+            secretAccessKey: env('AWS_ACCESS_SECRET'),
+          },
+          region: env('AWS_REGION', 'ca-central-1'),
+          params: {
+            ACL: env('AWS_ACL', 'public-read'),
+            Bucket: env('AWS_BUCKET'),
+          },
         },
       },
     },
